@@ -25,16 +25,6 @@ export default function Header() {
   }, [mobileMenuOpen]);
 
 
-  function fileDownload(){
-    const link = document.createElement("a");
-    link.href = "https://github.com/KishanTatv/protfolio/blob/main/public/assets/doc/resume.pdf";
-    link.download = "kishan-resume.pdf"; 
-    document.body.appendChild(link);
-
-    link.click();
-    document.body.removeChild(link);
-  }
-
   function getLinkref(id: number): void {
     let sectionId = "";
     switch (id) {
