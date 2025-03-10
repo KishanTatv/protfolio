@@ -94,7 +94,7 @@ export default function PortfolioGrid() {
           </h2>
         </motion.div>
 
-        <div className="flex justify-start space-x-4 mb-8 px-5 overflow-hidden">
+        <div ref={carousel} className="flex sm:justify-start lg:justify-center space-x-4 mb-8 px-5 overflow-hidden">
           <motion.div
             drag="x"
             dragConstraints={{ right: 0, left: -width }}
