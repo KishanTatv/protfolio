@@ -26,9 +26,10 @@ export default function Header() {
 
   function fileDownload(){
     const link = document.createElement("a");
-    link.href = "/assets/doc/resume.pdf";
+    link.href = "https://github.com/KishanTatv/protfolio/blob/main/public/assets/doc/resume.pdf";
     link.download = "kishan-resume.pdf"; 
     document.body.appendChild(link);
+
     link.click();
     document.body.removeChild(link);
   }

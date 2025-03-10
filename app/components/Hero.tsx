@@ -1,18 +1,33 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { FileDownIcon } from "lucide-react";
 import Image from "next/image"
 
 export default function Hero() {
 
-  function fileDownload(){
-    const link = document.createElement("a");
-    link.href = "/assets/doc/resume.pdf";
-    link.download = "kishan-resume.pdf"; 
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  }
+  async function fileDownload() {
+    try {
+      const fileUrl = "https://github.com/KishanTatv/protfolio/blob/main/public/assets/doc/resume.pdf";
+      const response = await fetch(fileUrl);
+      const blob = await response.blob();
+      console.log(blob);
+      const blobUrl = window.URL.createObjectURL(blob);
+      
+      const link = document.createElement("a");
+      link.href = blobUrl;
+      link.download = "Kishan-Resume.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+  
+      // Clean up the blob URL
+      window.URL.revokeObjectURL(blobUrl);
+    } catch (error) {
+      console.error("Download failed", error);
+    }
+  };
+
 
   return (
     <div className="relative isolate overflow-hidden bg-background">
@@ -48,20 +63,12 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="apple-button"
-            >
-              Explore Our Work
-            </a>
             <p
               rel="noopener noreferrer"
-              className="text-sm font-semibold leading-6 text-foreground"
-              onClick={() => fileDownload()}
+              className="flex text-sm font-semibold leading-6 text-foreground apple-button"
+              onClick={async() => await fileDownload()}
             >
-              Download Resume <span aria-hidden="true">→</span>
+              For a Resume <span aria-hidden="true"><FileDownIcon className="ml-2"></FileDownIcon></span>
             </p>
           </motion.div>
         </div>
