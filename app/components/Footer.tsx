@@ -3,13 +3,14 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-background border-t border-border">
-      <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
+      <div className="mx-auto max-w-7xl overflow-hidden px-6 py-10 sm:py-10 lg:px-8">
+        {/* Center the links in mobile view */}
         <nav
-          className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12"
+          className="flex flex-col items-center sm:flex-row sm:justify-center sm:space-x-12"
           aria-label="Footer"
         >
           {/* LinkedIn Link */}
-          <div className="pb-6">
+          <div className="pb-4 sm:pb-6">
             <Link
               href="https://www.linkedin.com/in/bhadani-kishan-8a423a20a"
               target="_blank"
@@ -29,7 +30,7 @@ export default function Footer() {
           </div>
 
           {/* GitHub Link */}
-          <div className="pb-6">
+          <div className="pb-4 sm:pb-6">
             <Link
               href="https://github.com/KishanTatv/"
               target="_blank"
@@ -51,8 +52,8 @@ export default function Footer() {
 
         <p className="mt-10 text-center text-sm leading-5 text-muted-foreground">
           © {new Date().getFullYear()}{" "}
-          <span className="font-medium">Kishan Bhadani</span>. 
-          Let’s create something amazing together! 🚀
+          <span className="font-medium">Kishan Bhadani</span>. Let’s create
+          something amazing together! 🚀
         </p>
       </div>
     </footer>

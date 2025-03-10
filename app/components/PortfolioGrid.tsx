@@ -1,45 +1,54 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import Image from "next/image"
-import SMS from "@/public/assets/sms1.png"
-import rideShare from "@/public/assets/ride-share.png"
-import halloDoc from "@/public/assets/hallodoc.jpg"
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import SMS from "@/public/assets/sms1.png";
+import rideShare from "@/public/assets/ride-share.png";
+import halloDoc from "@/public/assets/hallodoc.jpg";
 
 const projects = [
   {
     id: 1,
     title: "HalloDoc Platform",
-    description: "HalloDoc platform will allow the patient for request on portal and also developed comprehensive system for providing a service to all Health regarding.",
+    description:
+      "HalloDoc platform will allow the patient for request on portal and also developed comprehensive system for providing a service to all Health regarding.",
     imageUrl: halloDoc.src,
     category: "Healthcare",
-    url: "https://rideshare-4c026.web.app/"
+    url: "https://rideshare-4c026.web.app/",
   },
   {
     id: 2,
     title: "E-Ride Sharing",
-    description: "RideShare is an Online platform that connects Driver's and Rider's.",
+    description:
+      "RideShare is an Online platform that connects Driver's and Rider's.",
     imageUrl: rideShare.src,
     category: "Transport",
-    url: "https://rideshare-4c026.web.app/"
+    url: "https://rideshare-4c026.web.app/",
   },
   {
     id: 3,
     title: "School Management System",
-    description: "Easily managed school record also provides libraries, transportation, fees, exam and chat functionality.",
+    description:
+      "Easily managed school record also provides libraries, transportation, fees, exam and chat functionality.",
     imageUrl: SMS.src,
     category: "Education",
-    url: "https://rideshare-4c026.web.app/"
-  }
-]
+    url: "https://rideshare-4c026.web.app/",
+  },
+];
 
-const categories = ["All", ...new Set(projects.map((project) => project.category))]
+const categories = [
+  "All",
+  ...new Set(projects.map((project) => project.category)),
+];
 
 export default function PortfolioGrid() {
-  const [filter, setFilter] = useState("All")
+  const [filter, setFilter] = useState("All");
 
-  const filteredProjects = filter === "All" ? projects : projects.filter((project) => project.category === filter)
+  const filteredProjects =
+    filter === "All"
+      ? projects
+      : projects.filter((project) => project.category === filter);
 
   return (
     <section className="py-10 bg-background" id="sectionProject">
@@ -50,13 +59,15 @@ export default function PortfolioGrid() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Projects</h2>
+          <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
+            Projects
+          </h2>
           {/* <p className="mt-4 text-lg text-muted-foreground">
             A showcase of our minimalist designs and creative solutions.
           </p> */}
         </motion.div>
 
-        <div className="flex justify-center space-x-4 mb-8">
+        <div className="flex justify-center overflow-x-auto space-x-4 mb-8 px-2 scrollbar-hide">
           {categories.map((category) => (
             <button
               key={category}
@@ -72,7 +83,10 @@ export default function PortfolioGrid() {
           ))}
         </div>
 
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div
+          layout
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
           <AnimatePresence>
             {filteredProjects.map((project) => (
               <motion.div
@@ -97,12 +111,18 @@ export default function PortfolioGrid() {
                     className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300"
                     whileHover={{ opacity: 1 }}
                   >
-                    <p className="text-white text-center px-4">{project.description}</p>
+                    <p className="text-white text-center px-4">
+                      {project.description}
+                    </p>
                   </motion.div>
                 </div>
                 <div className="p-6">
-                  <div className="text-sm font-medium text-primary mb-1">{project.category}</div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">{project.title}</h3>
+                  <div className="text-sm font-medium text-primary mb-1">
+                    {project.category}
+                  </div>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">
+                    {project.title}
+                  </h3>
                   <a
                     href={project.url}
                     target="_blank"
@@ -117,7 +137,12 @@ export default function PortfolioGrid() {
                       viewBox="0 0 24 24"
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                      />
                     </svg>
                   </a>
                 </div>
@@ -127,6 +152,5 @@ export default function PortfolioGrid() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
-
