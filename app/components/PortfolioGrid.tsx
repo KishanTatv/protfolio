@@ -1,7 +1,12 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import {
+  motion,
+  AnimatePresence,
+  useMotionValue,
+  useAnimation,
+} from "framer-motion";
 import Image from "next/image";
 import SMS from "@/public/assets/sms1.png";
 import rideShare from "@/public/assets/ride-share.png";
@@ -44,6 +49,31 @@ const categories = [
 
 export default function PortfolioGrid() {
   const [filter, setFilter] = useState("All");
+  const [width, setWidth] = useState(0);
+  const carousel = useRef<HTMLDivElement>(null);
+  const x = useMotionValue(0);
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (carousel.current) {
+      setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
+    }
+  }, []);
+
+  const handleDragEnd = () => {
+    const currentX = x.get();
+    if (currentX > 0) {
+      controls.start({
+        x: 0,
+        transition: { type: "spring", stiffness: 300, damping: 30 },
+      });
+    } else if (currentX < -width) {
+      controls.start({
+        x: -width,
+        transition: { type: "spring", stiffness: 300, damping: 30 },
+      });
+    }
+  };
 
   const filteredProjects =
     filter === "All"
@@ -62,25 +92,32 @@ export default function PortfolioGrid() {
           <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
             Projects
           </h2>
-          {/* <p className="mt-4 text-lg text-muted-foreground">
-            A showcase of our minimalist designs and creative solutions.
-          </p> */}
         </motion.div>
 
-        <div className="flex justify-center overflow-x-auto space-x-4 mb-8 px-2 scrollbar-hide">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setFilter(category)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                filter === category
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
-              }`}
-            >
-              {category}
-            </button>
-          ))}
+        <div className="flex justify-center space-x-4 mb-8 px-2 overflow-hidden">
+          <motion.div
+            drag="x"
+            dragConstraints={{ right: 0, left: -width }}
+            whileTap={{ cursor: "grabbing" }}
+            animate={controls}
+            style={{ x }}
+            onDragEnd={handleDragEnd}
+            className="flex"
+          >
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setFilter(category)}
+                className={`px-4 mx-2 py-2 rounded-full text-sm font-medium transition-colors ${
+                  filter === category
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </motion.div>
         </div>
 
         <motion.div
