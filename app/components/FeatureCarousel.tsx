@@ -5,31 +5,32 @@ import { motion, useAnimation, useMotionValue } from "framer-motion"
 
 const features = [
   {
-    title: "Minimal Design",
-    description: "Clean aesthetics that put your content in the spotlight.",
-    icon: "✨",
+    title: "Full-Stack Development",
+    description: "Building end-to-end applications with modern frontend and backend technologies.",
+    icon: "🖥️",
   },
   {
-    title: "Responsive",
-    description: "Flawless experiences across all devices and screen sizes.",
-    icon: "📱",
+    title: "Scalable Architecture",
+    description: "Designing robust and scalable systems that grow with user needs.",
+    icon: "📈",
   },
   {
-    title: "Fast Performance",
-    description: "Lightning-quick load times for smooth user interactions.",
+    title: "Performance Optimization",
+    description: "Ensuring fast load times and smooth user experiences through efficient coding.",
     icon: "⚡",
   },
   {
-    title: "Accessibility",
-    description: "Inclusive design practices for all users.",
-    icon: "🌈",
+    title: "API Development",
+    description: "Creating secure and high-performance APIs for seamless data communication.",
+    icon: "🔗",
   },
   {
-    title: "SEO Optimized",
-    description: "Built to help your site rank higher in search results.",
-    icon: "🔍",
+    title: "Cloud & DevOps",
+    description: "Deploying applications with cloud technologies and automation tools.",
+    icon: "☁️",
   },
-]
+];
+
 
 export default function FeatureCarousel() {
   const [width, setWidth] = useState(0)

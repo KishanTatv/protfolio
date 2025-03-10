@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 export default function Hero() {
   return (
     <div className="relative isolate overflow-hidden bg-background">
-      <div className="mx-auto max-w-7xl px-6 py-20 lg:flex lg:items-center lg:gap-x-10 lg:px-8">
+      <div className="mx-auto max-w-7xl px-3 py-10 lg:flex lg:items-center lg:gap-x-10 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg lg:flex-shrink-0">
           <motion.h1
             className="mt-10 text-4xl font-bold tracking-tight text-foreground sm:text-6xl"
@@ -21,7 +21,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="">Computer Science Student</span>
+            <span className="">IT Student</span>
           </motion.h2>
           <motion.p
             className="mt-6 text-lg leading-8 text-muted-foreground"

@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
-import SMS from "@/public/assets/SMS.png"
+import SMS from "@/public/assets/sms1.png"
 import rideShare from "@/public/assets/ride-share.png"
 import halloDoc from "@/public/assets/hallodoc.jpg"
 
@@ -11,23 +11,26 @@ const projects = [
   {
     id: 1,
     title: "HalloDoc Platform",
-    description: "Clean and modern visual communication for a tech startup",
+    description: "HalloDoc platform will allow the patient for request on portal and also developed comprehensive system for providing a service to all Health regarding.",
     imageUrl: halloDoc.src,
     category: "Healthcare",
+    url: "https://rideshare-4c026.web.app/"
   },
   {
     id: 2,
     title: "E-Ride Sharing",
-    description: "Elegant online presence for a luxury fashion brand",
+    description: "RideShare is an Online platform that connects Driver's and Rider's.",
     imageUrl: rideShare.src,
     category: "Transport",
+    url: "https://rideshare-4c026.web.app/"
   },
   {
     id: 3,
     title: "School Management System",
-    description: "User-friendly app design for a health and wellness company",
+    description: "Easily managed school record also provides libraries, transportation, fees, exam and chat functionality.",
     imageUrl: SMS.src,
     category: "Education",
+    url: "https://rideshare-4c026.web.app/"
   }
 ]
 
@@ -39,7 +42,7 @@ export default function PortfolioGrid() {
   const filteredProjects = filter === "All" ? projects : projects.filter((project) => project.category === filter)
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-10 bg-background" id="sectionProject">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-12"
@@ -48,9 +51,9 @@ export default function PortfolioGrid() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Projects</h2>
-          <p className="mt-4 text-lg text-muted-foreground">
+          {/* <p className="mt-4 text-lg text-muted-foreground">
             A showcase of our minimalist designs and creative solutions.
-          </p>
+          </p> */}
         </motion.div>
 
         <div className="flex justify-center space-x-4 mb-8">
@@ -100,7 +103,7 @@ export default function PortfolioGrid() {
                   <div className="text-sm font-medium text-primary mb-1">{project.category}</div>
                   <h3 className="text-xl font-semibold text-foreground mb-2">{project.title}</h3>
                   <a
-                    href="https://www.flowersandsaints.com.au"
+                    href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-primary hover:underline inline-flex items-center"

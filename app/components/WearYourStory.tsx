@@ -3,8 +3,14 @@
 import { motion } from "framer-motion"
 
 export default function WearYourStory() {
+
+  function getDown(){
+    var viewSection = document.getElementById("sectionProject");
+    viewSection?.scrollIntoView({ behavior: "smooth", block: 'center' });
+  }
+
   return (
-    <section className="bg-background py-20">
+    <section className="bg-background py-10" id="sectionAbout">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -13,14 +19,10 @@ export default function WearYourStory() {
           className="text-center"
         >
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6">About Me</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          I am a Computer Science student at FAST NUCES with a passion for technology and problem-solving. 
-          My academic journey has equipped me with strong programming skills and a solid foundation in computer science principles.
-          </p>
-          <p className="text-xl md:text-xl text-muted-foreground max-w-3xl mx-auto pt-2">
-          I am passionate about learning new technologies and applying my knowledge to create innovative solutions. 
-          With excellent time management and communication skills, I am able to work effectively both independently and as part of a team.
-          </p>
+           <motion.p className="mt-6 text-muted-foreground max-w-3xl mx-auto">
+            I am passionate about learning new technologies and applying my knowledge to create innovative solutions. 
+            With excellent time management and communication skills, I am able to work effectively both independently and as part of a team.
+            </motion.p>
           <motion.div
             className="mt-10"
             initial={{ opacity: 0, y: 20 }}
@@ -28,12 +30,11 @@ export default function WearYourStory() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <a
-              href="https://www.flowersandsaints.com.au"
-              target="_blank"
               rel="noopener noreferrer"
               className="apple-button inline-flex items-center"
+              onClick={() => getDown()}
             >
-              Explore Collection
+              Explore More
               <svg
                 className="w-5 h-5 ml-2"
                 fill="none"

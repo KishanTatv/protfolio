@@ -1,34 +1,34 @@
 "use client"
 
 import { useState, useRef } from "react"
-import { motion, useScroll, useTransform, useSpring, useInView } from "framer-motion"
+import { motion, useScroll, useSpring, useInView } from "framer-motion"
 
 const timelineEvents = [
   {
     id: 1,
     year: "2021-24",
     title: "Bachelor of Engineering - IT",
-    description: "Gujarat Technological University",
+    description: "Gujarat Technological University, India",
     details:
-      "Founded by Jane Doe and John Smith, Flowers & Saints started as a small studio in Sydney's Surry Hills, combining their love for minimalist design and botanical beauty.",
+      "Completed my Bachelor's degree in Information Technology from Gujarat Technological University. During my final year, I collaborated with my colleagues to develop a React-based project 'E-Ride Share'.",
   },
   {
     id: 2,
     year: "2024",
-    title: "TatvaSoft - Trainee",
-    description: "Showcased our unique blend of digital art and floral arrangements at the Sydney Design Festival.",
+    title: "Trainee - TatvaSoft",
+    description: "Software Development Training Program",
     details:
-      "Our exhibition 'Digital Bloom' attracted over 10,000 visitors and received critical acclaim for its innovative approach to merging technology with natural elements.",
+      "Started my professional journey as a trainee at TatvaSoft. Gained expertise in various technologies including MVC, ASP.NET, .NET Core, EF Core, and PostgreSQL. Focused on backend development and database management, strengthening my problem-solving and coding skills.",
   },
   {
     id: 3,
-    year: "2024",
-    title: "TatvaSoft - Trainee Software Engineer",
-    description: "Expanded our reach by bringing our creations to the digital world.",
+    year: "2025",
+    title: "Trainee Software Engineer - TatvaSoft",
+    description: "Hands-on Experience in Full-Stack Development",
     details:
-      "In response to global changes, we pivoted to e-commerce, offering our unique designs and virtual floral workshops to a worldwide audience.",
+      "After successfully completing my training, I was assigned to the SMS project. Here, I honed my skills in Angular, Web API, and SSMS, contributing to the development of key modules and improving the application's performance and user experience.",
   }
-]
+];
 
 const FlowerIcon = ({ progress }: { progress: number }) => (
   <svg
@@ -66,7 +66,7 @@ export default function Timeline() {
   })
 
   return (
-    <section ref={containerRef} className="py-20 bg-background overflow-hidden">
+    <section ref={containerRef} className="py-10 bg-background overflow-hidden" id="sectionExperience">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-12"
@@ -75,7 +75,7 @@ export default function Timeline() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Experience</h2>
-          <p className="mt-4 text-lg text-muted-foreground">The evolution of Flowers & Saints through the years</p>
+          {/* <p className="mt-4 text-lg text-muted-foreground">The evolution of Flowers & Saints through the years</p> */}
         </motion.div>
 
         <div className="relative">

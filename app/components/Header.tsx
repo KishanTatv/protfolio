@@ -13,6 +13,26 @@ export default function Header() {
 
   useEffect(() => setMounted(true), [])
 
+  function getLinkref(id: number): void{
+    var sectionId = "";
+    switch(id){
+      case 1:
+        sectionId = "sectionAbout";
+        break;
+      case 2:
+        sectionId = "sectionProject";
+      break;
+      case 3:
+        sectionId = "sectionExperience";
+        break;
+      case 4:
+        sectionId = "sectionContact";
+      break;
+    }
+    var viewSection = document.getElementById(sectionId);
+    viewSection?.scrollIntoView({ behavior: "smooth", block: 'center' });
+  }
+
   return (
     <motion.header
       className="sticky top-0 z-50 bg-background/80 backdrop-blur-md"
@@ -23,7 +43,7 @@ export default function Header() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">Flowers & Saints</span>
+            <span className="sr-only">Dev</span>
             <img
               className="h-12 w-auto"
               src={headerIcon.src}
@@ -32,30 +52,34 @@ export default function Header() {
           </Link>
         </div>
         <div className="flex gap-x-12">
-          <Link
-            href="#"
-            target="_blank"
+          <p
             rel="noopener noreferrer"
             className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors"
+            onClick={() => getLinkref(1)}
           >
-            Work
-          </Link>
-          <Link
-            href="#"
-            target="_blank"
+            About Me
+          </p>
+          <p
             rel="noopener noreferrer"
             className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors"
+            onClick={() => getLinkref(2)}
           >
-            About
-          </Link>
-          <Link
-            href="#"
-            target="_blank"
+            Project
+          </p>
+          <p
             rel="noopener noreferrer"
             className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors"
+            onClick={() => getLinkref(3)}
+          >
+            Experience
+          </p>
+          <p
+            rel="noopener noreferrer"
+            className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors"
+            onClick={() => getLinkref(4)}
           >
             Contact
-          </Link>
+          </p>
         </div>
         <div className="flex flex-1 justify-end">
           {mounted && (
