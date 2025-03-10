@@ -9,7 +9,7 @@ export default function Hero() {
       <div className="mx-auto max-w-7xl px-3 py-10 lg:flex lg:items-center lg:gap-x-10 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg lg:flex-shrink-0">
           <motion.h1
-            className="mt-10 text-4xl font-bold tracking-tight text-foreground sm:text-6xl"
+            className="lg:mt-10 text-4xl font-bold tracking-tight text-foreground sm:text-6xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}

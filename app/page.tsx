@@ -10,12 +10,10 @@ export default function Home() {
     <>
       <Hero />
       <WearYourStory />
-      {/* <FeatureCarousel /> */}
       <PortfolioGrid />
       <Timeline />
       <Marquee />
       <ContactForm />
-      {/* <NewsletterSubscribe /> */}
     </>
   )
 }
