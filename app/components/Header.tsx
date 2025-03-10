@@ -2,15 +2,17 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { DocumentIcon } from "@heroicons/react/24/outline";
 import headerIcon from "@/public/assets/header-icon.png";
 import Image from "next/image";
-import { MenuIcon, XIcon } from "lucide-react";
+import { MenuIcon, MoonIcon, SunIcon, XIcon } from "lucide-react";
+import { useTheme } from "next-themes";
 
 export default function Header() {
+  const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false);
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  console.log(theme);
 
   useEffect(() => setMounted(true), []);
   
@@ -113,11 +115,11 @@ export default function Header() {
         <div className="hidden lg:flex flex-1 justify-end">
           {mounted && (
             <button
-              onClick={() => fileDownload()}
-              className="rounded-full p-2 bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
-            >
-              <DocumentIcon className="h-5 w-5" />
-            </button>
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="rounded-full p-2 bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
+          >
+            {theme === "dark" ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
+          </button>
           )}
         </div>
       </nav>
