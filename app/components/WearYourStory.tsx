@@ -6,7 +6,7 @@ export default function WearYourStory() {
 
   function getDown(){
     var viewSection = document.getElementById("sectionProject");
-    viewSection?.scrollIntoView({ behavior: "smooth", block: 'center' });
+    viewSection?.scrollIntoView({ behavior: "smooth", block: "center" });
   }
 
   return (

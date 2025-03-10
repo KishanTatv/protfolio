@@ -10,7 +10,7 @@ const timelineEvents = [
     title: "Bachelor of Engineering - IT",
     description: "Gujarat Technological University, India",
     details:
-      "Completed my Bachelor's degree in Information Technology from Gujarat Technological University. During my final year, I collaborated with my colleagues to develop a React-based project 'E-Ride Share'.",
+      "Completed my Bachelor degree in Information Technology from Gujarat Technological University. During my final year, I collaborated with my colleagues to develop a React-based project E-Ride Share.",
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ const timelineEvents = [
     title: "Trainee Software Engineer - TatvaSoft",
     description: "Hands-on Experience in Full-Stack Development",
     details:
-      "After successfully completing my training, I was assigned to the SMS project. Here, I honed my skills in Angular, Web API, and SSMS, contributing to the development of key modules and improving the application's performance and user experience.",
+      "After successfully completing my training, I was assigned to the SMS project. Here, I honed my skills in Angular, Web API, and SSMS, contributing to the development of key modules and improving the applications performance and user experience.",
   }
 ];
 

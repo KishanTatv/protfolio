@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Image from "next/image"
 
 export default function Hero() {
   return (
@@ -62,7 +63,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           <div className="relative">
-            <img
+            <Image
               src="https://t3.ftcdn.net/jpg/05/20/80/86/360_F_520808688_oQ6yuXaNZi5Lf0dxjUXeIQSWPeIINEMI.jpg"
               alt="Flowers & Saints design concept"
               width={600}

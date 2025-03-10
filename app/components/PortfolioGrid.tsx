@@ -19,7 +19,7 @@ const projects = [
   {
     id: 2,
     title: "E-Ride Sharing",
-    description: "RideShare is an Online platform that connects Driver's and Rider's.",
+    description: "RideShare is an Online platform that connects Drivers and Riders.",
     imageUrl: rideShare.src,
     category: "Transport",
     url: "https://rideshare-4c026.web.app/"

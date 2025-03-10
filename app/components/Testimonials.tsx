@@ -6,7 +6,7 @@ import Image from "next/image"
 const testimonials = [
   {
     quote:
-      "CreativeAgency transformed our brand's digital presence. Their innovative approach and attention to detail exceeded our expectations.",
+      "CreativeAgency transformed our brands digital presence. Their innovative approach and attention to detail exceeded our expectations.",
     author: "Jane Doe",
     position: "CEO, TechCorp",
     image: "/placeholder.svg?height=100&width=100",

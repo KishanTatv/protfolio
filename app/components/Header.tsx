@@ -6,6 +6,7 @@ import { useTheme } from "next-themes"
 import { motion } from "framer-motion"
 import { DocumentIcon } from "@heroicons/react/24/outline"
 import headerIcon from "@/public/assets/header-icon.png"
+import Image from "next/image"
 
 export default function Header() {
   const [mounted, setMounted] = useState(false)
@@ -30,7 +31,7 @@ export default function Header() {
       break;
     }
     var viewSection = document.getElementById(sectionId);
-    viewSection?.scrollIntoView({ behavior: "smooth", block: 'center' });
+    viewSection?.scrollIntoView({ behavior: "smooth", block: "center" });
   }
 
   return (
@@ -44,7 +45,7 @@ export default function Header() {
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Dev</span>
-            <img
+            <Image
               className="h-12 w-auto"
               src={headerIcon.src}
               alt="Flowers & Saints Logo"
