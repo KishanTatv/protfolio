@@ -12,7 +12,6 @@ export default function Header() {
   const [mounted, setMounted] = useState(false);
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  console.log(theme);
 
   useEffect(() => setMounted(true), []);
   
