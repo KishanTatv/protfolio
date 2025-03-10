@@ -30,7 +30,7 @@ export default function Header() {
         sectionId = "sectionContact";
       break;
     }
-    let viewSection = document.getElementById(sectionId);
+    const viewSection = document.getElementById(sectionId);
     viewSection?.scrollIntoView({ behavior: "smooth", block: "center" });
   }
 

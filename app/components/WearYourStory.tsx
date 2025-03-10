@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 export default function WearYourStory() {
 
   function getDown(){
-    let exploreSection = document.getElementById("sectionProject");
+    const exploreSection = document.getElementById("sectionProject");
     exploreSection?.scrollIntoView({ behavior: "smooth", block: "center" });
   }
 
