@@ -15,7 +15,7 @@ export default function Header() {
   useEffect(() => setMounted(true), [])
 
   function getLinkref(id: number): void{
-    var sectionId = "";
+    let sectionId = "";
     switch(id){
       case 1:
         sectionId = "sectionAbout";
@@ -30,7 +30,7 @@ export default function Header() {
         sectionId = "sectionContact";
       break;
     }
-    var viewSection = document.getElementById(sectionId);
+    let viewSection = document.getElementById(sectionId);
     viewSection?.scrollIntoView({ behavior: "smooth", block: "center" });
   }
 
