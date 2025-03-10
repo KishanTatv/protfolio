@@ -19,7 +19,7 @@ const projects = [
   {
     id: 2,
     title: "E-Ride Sharing",
-    description: "RideShare is an Online platform that connects Drivers and Riders.",
+    description: "RideShare is an Online platform that connects Driver's and Rider's.",
     imageUrl: rideShare.src,
     category: "Transport",
     url: "https://rideshare-4c026.web.app/"
@@ -86,6 +86,7 @@ export default function PortfolioGrid() {
               >
                 <div className="relative h-64 overflow-hidden">
                   <Image
+                    fill
                     src={project.imageUrl}
                     alt={project.title}
                     layout="fill"

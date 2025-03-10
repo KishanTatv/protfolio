@@ -19,7 +19,7 @@ export default function ProjectCard({ title, description, image, size }: Project
       whileHover={{ scale: 1.05 }}
       transition={{ duration: 0.3 }}
     >
-      <Image src={image || "/placeholder.svg"} alt={title} fill className="object-cover" />
+      <Image fill src={image || "/placeholder.svg"} alt={title} className="object-cover" />
       <motion.div
         className="absolute inset-0 bg-black bg-opacity-60 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6"
         initial={{ opacity: 0 }}

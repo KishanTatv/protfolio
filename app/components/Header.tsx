@@ -1,34 +1,34 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { useTheme } from "next-themes"
-import { motion } from "framer-motion"
-import { DocumentIcon } from "@heroicons/react/24/outline"
-import headerIcon from "@/public/assets/header-icon.png"
-import Image from "next/image"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { useTheme } from "next-themes";
+import { motion } from "framer-motion";
+import { DocumentIcon, MoonIcon, SunIcon } from "@heroicons/react/24/outline";
+import headerIcon from "@/public/assets/header-icon.png";
+import Image from "next/image";
 
 export default function Header() {
-  const [mounted, setMounted] = useState(false)
-  const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
 
-  useEffect(() => setMounted(true), [])
+  useEffect(() => setMounted(true), []);
 
-  function getLinkref(id: number): void{
+  function getLinkref(id: number): void {
     let sectionId = "";
-    switch(id){
+    switch (id) {
       case 1:
         sectionId = "sectionAbout";
         break;
       case 2:
         sectionId = "sectionProject";
-      break;
+        break;
       case 3:
         sectionId = "sectionExperience";
         break;
       case 4:
         sectionId = "sectionContact";
-      break;
+        break;
     }
     const viewSection = document.getElementById(sectionId);
     viewSection?.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -41,11 +41,16 @@ export default function Header() {
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+      <nav
+        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+        aria-label="Global"
+      >
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">Dev</span>
+            <span className="sr-only">Flowers & Saints</span>
             <Image
+              height={300}
+              width={200}
               className="h-12 w-auto"
               src={headerIcon.src}
               alt="Flowers & Saints Logo"
@@ -56,23 +61,9 @@ export default function Header() {
           <p
             rel="noopener noreferrer"
             className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors"
-            onClick={() => getLinkref(1)}
-          >
-            About Me
-          </p>
-          <p
-            rel="noopener noreferrer"
-            className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors"
             onClick={() => getLinkref(2)}
           >
             Project
-          </p>
-          <p
-            rel="noopener noreferrer"
-            className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors"
-            onClick={() => getLinkref(3)}
-          >
-            Experience
           </p>
           <p
             rel="noopener noreferrer"
@@ -88,15 +79,13 @@ export default function Header() {
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               className="rounded-full p-2 bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
             >
-              {/* {theme === "dark" ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />} */}
               <span className="">
-              <DocumentIcon className="h-5 w-5"  />
+                <DocumentIcon className="h-5 w-5" />
               </span>
             </button>
           )}
         </div>
       </nav>
     </motion.header>
-  )
+  );
 }
-
