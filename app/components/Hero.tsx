@@ -4,9 +4,19 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 
 export default function Hero() {
+
+  function fileDownload(){
+    const link = document.createElement("a");
+    link.href = "/assets/doc/resume.pdf";
+    link.download = "kishan-resume.pdf"; 
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
   return (
     <div className="relative isolate overflow-hidden bg-background">
-      <div className="mx-auto max-w-7xl px-3 py-10 lg:flex lg:items-center lg:gap-x-10 lg:px-8">
+      <div className="mx-auto max-w-7xl px-8 py-10 lg:flex lg:items-center lg:gap-x-10 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg lg:flex-shrink-0">
           <motion.h1
             className="lg:mt-10 text-4xl font-bold tracking-tight text-foreground sm:text-6xl"
@@ -46,14 +56,13 @@ export default function Hero() {
             >
               Explore Our Work
             </a>
-            <a
-              href="#"
-              target="_blank"
+            <p
               rel="noopener noreferrer"
               className="text-sm font-semibold leading-6 text-foreground"
+              onClick={() => fileDownload()}
             >
-              Learn more <span aria-hidden="true">→</span>
-            </a>
+              Download Resume <span aria-hidden="true">→</span>
+            </p>
           </motion.div>
         </div>
         <motion.div

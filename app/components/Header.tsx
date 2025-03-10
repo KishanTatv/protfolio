@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
 import { DocumentIcon } from "@heroicons/react/24/outline";
 import headerIcon from "@/public/assets/header-icon.png";
@@ -10,7 +9,6 @@ import { MenuIcon, XIcon } from "lucide-react";
 
 export default function Header() {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -24,6 +22,16 @@ export default function Header() {
       document.body.classList.remove("overflow-hidden");
     }
   }, [mobileMenuOpen]);
+
+
+  function fileDownload(){
+    const link = document.createElement("a");
+    link.href = "/assets/doc/resume.pdf";
+    link.download = "kishan-resume.pdf"; 
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
 
   function getLinkref(id: number): void {
     let sectionId = "";
@@ -89,7 +97,7 @@ export default function Header() {
 
         {/* Desktop Navigation Links */}
         <div className="hidden lg:flex gap-x-12">
-          {["About me", "Project", "Contact"].map((item, index) => (
+         {["About me", "Project", "Experience", "Contact"].map((item, index) => (
             <p
               key={index}
               className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors cursor-pointer"
@@ -104,7 +112,7 @@ export default function Header() {
         <div className="hidden lg:flex flex-1 justify-end">
           {mounted && (
             <button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              onClick={() => fileDownload()}
               className="rounded-full p-2 bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
             >
               <DocumentIcon className="h-5 w-5" />
