@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import headerIcon from "@/public/assets/header-icon.png";
+import headerIcon from "@/public/assets/header-x-icon.png";
 import Image from "next/image";
 import { MenuIcon, MoonIcon, SunIcon, XIcon } from "lucide-react";
 import { useTheme } from "next-themes";
