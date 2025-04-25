@@ -20,7 +20,7 @@ const projects = [
       "HalloDoc platform will allow the patient for request on portal and also developed comprehensive system for providing a service to all Health regarding.",
     imageUrl: halloDoc.src,
     category: "Healthcare",
-    url: "https://rideshare-4c026.web.app/",
+    url: "https://github.com/KishanTatv/HalloDoc-Platform",
   },
   {
     id: 2,
@@ -38,7 +38,6 @@ const projects = [
       "Easily managed school record also provides libraries, transportation, fees, exam and chat functionality.",
     imageUrl: SMS.src,
     category: "Education",
-    url: "https://rideshare-4c026.web.app/",
   },
 ];
 

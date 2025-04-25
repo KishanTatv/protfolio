@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { FileDownIcon } from "lucide-react";
 import Image from "next/image"
+import HeroImage from "@/public/assets/baner.png";
 
 export default function Hero() {
 
@@ -80,7 +81,7 @@ export default function Hero() {
         >
           <div className="relative">
             <Image
-              src="https://t3.ftcdn.net/jpg/05/20/80/86/360_F_520808688_oQ6yuXaNZi5Lf0dxjUXeIQSWPeIINEMI.jpg"
+              src={HeroImage.src}
               alt="Flowers & Saints design concept"
               width={600}
               height={600}
