@@ -9,20 +9,16 @@ export default function Hero() {
 
   async function fileDownload() {
     try {
-      const fileUrl = "https://github.com/KishanTatv/protfolio/blob/main/public/assets/doc/resume.pdf";
+      const fileUrl = "https://raw.githubusercontent.com/KishanTatv/protfolio/main/public/assets/doc/resume.pdf";
       const response = await fetch(fileUrl);
       const blob = await response.blob();
-      console.log(blob);
       const blobUrl = window.URL.createObjectURL(blob);
-      
       const link = document.createElement("a");
       link.href = blobUrl;
       link.download = "Kishan-Resume.pdf";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-  
-      // Clean up the blob URL
       window.URL.revokeObjectURL(blobUrl);
     } catch (error) {
       console.error("Download failed", error);
