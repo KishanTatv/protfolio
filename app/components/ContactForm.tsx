@@ -23,7 +23,6 @@ const formSchema = z.object({
   phoneNumber: z
     .string()
     .min(10, { message: "Please enter a valid phone number." }),
-  budget: z.string().min(1, { message: "Please enter your budget." }),
   message: z
     .string()
     .min(10, { message: "Message must be at least 10 characters." }),
@@ -46,7 +45,6 @@ export default function ContactForm() {
     setIsSubmitting(true);
     // Simulate API call
     setTimeout(() => {
-      console.log(values);
       setIsSubmitting(false);
       form.reset();
       alert("Thank you for your message. We'll get back to you soon!");
