@@ -9,7 +9,7 @@ export default function Hero() {
 
   async function fileDownload() {
     try {
-      const fileUrl = "https://raw.githubusercontent.com/KishanTatv/protfolio/main/public/assets/doc/resume.pdf";
+      const fileUrl = "https://raw.githubusercontent.com/KishanTatv/protfolio/main/public/assets/doc/kishan_resume.pdf";
       const response = await fetch(fileUrl);
       const blob = await response.blob();
       const blobUrl = window.URL.createObjectURL(blob);
