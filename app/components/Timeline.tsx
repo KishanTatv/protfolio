@@ -14,19 +14,19 @@ const timelineEvents = [
   },
   {
     id: 2,
-    year: "2024",
-    title: "Trainee - TatvaSoft",
-    description: "Software Development Training Program",
+    year: "2024-25",
+    title: "Trainee Software Engineer - TatvaSoft",
+    description: "Early Career Experience in Software Development",
     details:
-      "Started my professional journey as a trainee at TatvaSoft. Gained expertise in various technologies including MVC, ASP.NET, .NET Core, EF Core, and PostgreSQL. Focused on backend development and database management, strengthening my problem-solving and coding skills.",
+      "Started my professional journey at TatvaSoft, gaining hands-on experience with technologies such as MVC, ASP.NET, .NET Core, EF Core, and PostgreSQL. Focused primarily on backend development and database management, strengthening my problem-solving abilities and coding skills through practical implementation.",
   },
   {
     id: 3,
-    year: "2025",
-    title: "Trainee Software Engineer - TatvaSoft",
+    year: "2025-26",
+    title: "Associate Software Engineer - TatvaSoft",
     description: "Hands-on Experience in Full-Stack Development",
     details:
-      "After successfully completing my training, I was assigned to the SMS project. Here, I honed my skills in Angular, Web API, and SSMS, contributing to the development of key modules and improving the applications performance and user experience.",
+      "Worked as an Associate Software Engineer on the SMS & EMS(HRMS) project. Utilized Angular, .NET Web API, and SQL Server Management Studio (SSMS) to develop and enhance key modules. Contributed to improving application performance, functionality, and overall user experience.",
   }
 ];
 

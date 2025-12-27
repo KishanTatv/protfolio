@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { FileDownIcon } from "lucide-react";
+import { FileDownIcon, Pointer } from "lucide-react";
 import Image from "next/image"
 import HeroImage from "@/public/assets/baner.png";
 
@@ -62,6 +62,7 @@ export default function Hero() {
           >
             <p
               rel="noopener noreferrer"
+              style={{ cursor: 'pointer' }}
               className="flex text-sm font-semibold leading-6 text-foreground apple-button pe-auto"
               onClick={async () => await fileDownload()}
             >
