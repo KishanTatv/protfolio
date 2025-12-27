@@ -62,8 +62,8 @@ export default function Hero() {
           >
             <p
               rel="noopener noreferrer"
-              className="flex text-sm font-semibold leading-6 text-foreground apple-button"
-              onClick={async() => await fileDownload()}
+              className="flex text-sm font-semibold leading-6 text-foreground apple-button pe-auto"
+              onClick={async () => await fileDownload()}
             >
               For a Resume <span aria-hidden="true"><FileDownIcon className="ml-2"></FileDownIcon></span>
             </p>
